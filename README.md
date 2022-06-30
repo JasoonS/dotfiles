@@ -4,4 +4,5 @@ Misc: You may need to run this inside vim `:call coc#util#install()` if you get 
 
 # TODO:
 
-- [ ] - vscode alreday has its own way of syncing config, no need to have here.
+- [x] - vscode alreday has its own way of syncing config, no need to have here.
+- [ ] - update prezto files
