@@ -15,5 +15,5 @@ sudo apt-get install \
 	python3-dev \
 	tmux \
 	zsh \
-  lua5.3
+  lua5.4
 

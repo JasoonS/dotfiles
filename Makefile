@@ -8,7 +8,7 @@ links:
 	install-scripts/symbolic-links.sh
 
 zsh-setup:
-	zsh/setupOtherTools.sh
+	zsh/setupOtherools.sh
 	zsh/setupZshLinks.sh
 
 all: vim links zsh-setup

@@ -8,7 +8,7 @@
 	br = branch
 	ci = commit
 	st = status
-	tree = log --graph --oneline --all
+	tree = loi --graph --oneline --all
 
     unstage = reset HEAD --
     last = log -1 HEAD
@@ -64,3 +64,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[push]
+	default = current
