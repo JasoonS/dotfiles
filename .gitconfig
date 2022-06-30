@@ -1,68 +1,70 @@
 [user]
-	email = Jason@wildcards.world
-	name = Jason
+  email = Jason@wildcards.world
+  name = Jason
 [credential]
-	helper = store
+  helper = store
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-	tree = loi --graph --oneline --all
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  tree = log --graph --oneline --all
+  # to view all commits (even those not on a branch/detached heads)
+  tree-full = !sh -c 'git log --graph --decorate $(git rev-list -g --all)'
 
-    unstage = reset HEAD --
-    last = log -1 HEAD
-    out = log --branches --not --remotes=origin
-    files = !sh -c \"git show --pretty=\"format:\" --name-only $1\"
-    # lg = log --graph --oneline --decorate
-    # lg = log --graph --all --pretty=format:'%C(yellow)%h%Creset -%C(bold green)%d %Creset%s%C(cyan) %ar %Cblue%an'
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    folder = rev-parse --show-toplevel
-    update = merge --ff-only
-    conflicts = diff --diff-filter=U
-    br-diff = !sh -c 'git diff ${1:-master}...HEAD' -
-    pr = !sh -c \"git fetch origin pull/${1}/head:pr_${1}\"
-    history = log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  out = log --branches --not --remotes=origin
+  files = !sh -c \"git show --pretty=\"format:\" --name-only $1\"
+  # lg = log --graph --oneline --decorate
+  # lg = log --graph --all --pretty=format:'%C(yellow)%h%Creset -%C(bold green)%d %Creset%s%C(cyan) %ar %Cblue%an'
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  folder = rev-parse --show-toplevel
+  update = merge --ff-only
+  conflicts = diff --diff-filter=U
+  br-diff = !sh -c 'git diff ${1:-master}...HEAD' -
+  pr = !sh -c \"git fetch origin pull/${1}/head:pr_${1}\"
+  history = log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	grep = auto
-	interactive = auto
-	showbranch = auto
-	ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  grep = auto
+  interactive = auto
+  showbranch = auto
+  ui = true
 [color "status"]
-	added = green
-	changed = yellow
-	untracked = cyan
+  added = green
+  changed = yellow
+  untracked = cyan
 
 [core]
-	editor = vim
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  editor = vim
+  pager = diff-so-fancy | less --tabs=4 -RFX
 #[merge]
 #	ff = false
 [gpg]
-	program = gpg
+  program = gpg
 [commit]
-	gpgSign = false
+  gpgSign = false
 [tag]
-	forceSignAnnotated = false
+  forceSignAnnotated = false
 [hub]
-	protocol = ssh
+  protocol = ssh
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [color "diff"]
-	meta = 11
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+  meta = 11
+  frag = magenta bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
 [push]
-	default = current
+  default = current
