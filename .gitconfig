@@ -1,6 +1,7 @@
 [user]
-  email = Jason@wildcards.world
+	email = jason@envio.dev
   name = Jason
+	signingkey = F5AEB43F43D57A4201D9E93271685E2A7B2E94CC
 [credential]
   helper = store
 [alias]
@@ -40,20 +41,21 @@
   untracked = cyan
 
 [core]
-  editor = vim
+  editor = hx
   pager = diff-so-fancy | less --tabs=4 -RFX
 #[merge]
 #	ff = false
 [gpg]
-  program = gpg
+	program = gpg2
 [commit]
-  gpgSign = false
+	gpgsign = true
 [tag]
   forceSignAnnotated = false
 [hub]
-  protocol = ssh
+	protocol = ssh
 [diff]
   tool = vimdiff
+	algorithm = patience
 [color "diff-highlight"]
   oldNormal = red bold
   oldHighlight = red bold 52
@@ -68,3 +70,7 @@
   whitespace = red reverse
 [push]
   default = current
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main

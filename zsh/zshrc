@@ -16,8 +16,6 @@ fi
 # Add snap to path
 export PATH="/snap/bin:$PATH"
 
-
-
 # add z.lua (a fast `z`).
 #     NOTES: enhanced - use a silgtly different ranking algorithm than original `z`
 #            once - use number of times you go into a directory rather than amount of time in a directory
@@ -40,7 +38,8 @@ bindkey "^A" vi-beginning-of-line
 
 # Alias hub as git: https://github.com/github/hub#aliasing All normal git commands should still work
 eval "$(hub alias -s)"
-
+fpath=(~/.zsh/completions $fpath) 
+autoload -U compinit && compinit
 
 # Fix invisible cursor error when going back: https://github.com/zsh-users/zsh-syntax-highlighting/issues/171
 typeset -A ZSH_HIGHLIGHT_STYLES
@@ -129,8 +128,11 @@ fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
 # This somehow gets git to have proper autocomplete even though hub is also aliased to git.
-setopt complete_aliases
+# setopt complete_aliases # this breaks the autocomplete for kubectl it seems...
 source <(kubectl completion zsh)
+alias k=kubectl
+alias kns=kubens
+alias kctx=kubectx
 
 # complete -C '/usr/local/bin/aws_completer' aws
 
@@ -154,5 +156,65 @@ take ()
        cd -P -- "$1"
 }
 
-# gt is the graphite command, and so we must remove this alias
-unalias gt
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+alias docker-compose="docker compose"
+
+# Created by `pipx` on 2022-11-01 12:10:42
+export PATH="$PATH:/home/jasoons/.local/bin"
+
+# pipx completions:
+eval "$(register-python-argcomplete pipx)"
+  
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+alias python="python3"
+
+# Flux for kubernetes
+. <(flux completion bash)
+
+complete -o nospace -C /usr/bin/terraform terraform
+
+#compdef gt
+###-begin-gt-completions-###
+#
+# yargs command completion script
+#
+# Installation: /run/user/1000/fnm_multishells/75917_1689530499555/bin/gt completion >> ~/.zshrc
+#    or /run/user/1000/fnm_multishells/75917_1689530499555/bin/gt completion >> ~/.zprofile on OSX.
+#
+_gt_yargs_completions()
+{
+  local reply
+  local si=$IFS
+  IFS=$'
+' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" /run/user/1000/fnm_multishells/75917_1689530499555/bin/gt --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _gt_yargs_completions gt
+###-end-gt-completions-###
+
+# Add thefuck command
+eval "$(thefuck --alias fu)"
+
+# Use fzf to view files with a preview
+alias f='fzf --preview "bat --color \"always\" {}"'
+
+# ls, but a bit nicer
+alias ls='exa'
+alias ll='exa -l'
+
+# Better highlighting etc than cat.
+alias cat='bat'
+
+# man kindof sucks.
+alias man='tldr'
+
+
+# Setup ps1 (kubernetes prompt) [unfortunately this is very long for AWS clusters]
+# source /home/jasoons/Documents/config/kube-ps1/kube-ps1.sh
+# PROMPT='$(kube_ps1)'$PROMPT # or RPROMPT='$(kube_ps1)'
