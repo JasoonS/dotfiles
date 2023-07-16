@@ -160,7 +160,7 @@ take ()
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 alias docker-compose="docker compose"
-
+# -----------
 # Created by `pipx` on 2022-11-01 12:10:42
 export PATH="$PATH:/home/jasoons/.local/bin"
 
@@ -174,7 +174,7 @@ eval "$(register-python-argcomplete pipx)"
 alias python="python3"
 
 # Flux for kubernetes
-. <(flux completion bash)
+. <(flux completion zsh)
 
 complete -o nospace -C /usr/bin/terraform terraform
 
@@ -213,7 +213,6 @@ alias cat='bat'
 
 # man kindof sucks.
 alias man='tldr'
-
 
 # Setup ps1 (kubernetes prompt) [unfortunately this is very long for AWS clusters]
 # source /home/jasoons/Documents/config/kube-ps1/kube-ps1.sh
