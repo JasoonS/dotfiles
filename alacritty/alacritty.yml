@@ -1,0 +1,50 @@
+font:
+  normal:
+    family: "JetBrainsMono Nerd Font"
+window:
+  decorations: "none"
+import:
+  - ~/.config/alacritty/themes/themes/hyper_adjusted.yaml
+key_bindings:
+  - { key: V, mods: Control|Shift|ALT|Super, chars: "ű" }
+  # Ǆ 	LATIN CAPITAL LETTER DZ WITH CARON (U+01C4) 	c784
+  - { key: C, mods: Control|Shift|ALT|Super, chars: "Ǆ" }
+  # ǅ 	LATIN CAPITAL LETTER D WITH SMALL LETTER Z WITH CARON (U+01C5) 	c785
+  - { key: D, mods: Control|Shift|ALT|Super, chars: "ǅ" }
+  # ǆ 	LATIN SMALL LETTER DZ WITH CARON (U+01C6) 	c786
+  - { key: R, mods: Control|Shift|ALT|Super, chars: "ǆ" }
+  # Ǉ 	LATIN CAPITAL LETTER LJ (U+01C7) 	c787
+  # - { key: R, mods: Control|Shift|ALT|Super, chars: "Ǉ" }
+  # ǈ 	LATIN CAPITAL LETTER L WITH SMALL LETTER J (U+01C8) 	c788
+  - { key: H, mods: Control|Shift|ALT|Super, chars: "ǈ" }
+  # ǉ 	LATIN SMALL LETTER LJ (U+01C9) 	c789
+  - { key: J, mods: Control|Shift|ALT|Super, chars: "ǉ" }
+  # Ǌ 	LATIN CAPITAL LETTER NJ (U+01CA) 	c78a
+  - { key: K, mods: Control|Shift|ALT|Super, chars: "Ǌ" }
+  # ǋ 	LATIN CAPITAL LETTER N WITH SMALL LETTER J (U+01CB) 	c78b
+  - { key: L, mods: Control|Shift|ALT|Super, chars: "ǋ" }
+  # ǌ 	LATIN SMALL LETTER NJ (U+01CC) 	c78c
+  - { key: H, mods: Control|Shift|ALT, chars: "ǌ" }
+  # Ǎ 	LATIN CAPITAL LETTER A WITH CARON (U+01CD) 	c78d
+  - { key: J, mods: Control|Shift|ALT, chars: "Ǎ" }
+  # Ǖ 	LATIN CAPITAL LETTER U WITH DIAERESIS AND MACRON (U+01D5) 	c795
+  - { key: K, mods: Control|Shift|ALT, chars: "Ǖ" }
+  # ǖ 	LATIN SMALL LETTER U WITH DIAERESIS AND MACRON (U+01D6) 	c796
+  - { key: L, mods: Control|Shift|ALT, chars: "ǖ" }
+  # Ǘ 	LATIN CAPITAL LETTER U WITH DIAERESIS AND ACUTE (U+01D7) 	c797
+  - { key: P, mods: Control|Shift|ALT|Super, chars: "Ǘ" }
+  # ǘ 	LATIN SMALL LETTER U WITH DIAERESIS AND ACUTE (U+01D8) 	c798
+  - { key: N, mods: Control|Shift|ALT|Super, chars: "ǘ" }
+  # Ǚ 	LATIN CAPITAL LETTER U WITH DIAERESIS AND CARON (U+01D9) 	c799
+  # ǚ 	LATIN SMALL LETTER U WITH DIAERESIS AND CARON (U+01DA) 	c79a
+  # Ǜ 	LATIN CAPITAL LETTER U WITH DIAERESIS AND GRAVE (U+01DB) 	c79b
+  # ǜ 	LATIN SMALL LETTER U WITH DIAERESIS AND GRAVE (U+01DC) 	c79c
+  # ǝ 	LATIN SMALL LETTER TURNED E (U+01DD) 	c79d
+  # Ǟ 	LATIN CAPITAL LETTER A WITH DIAERESIS AND MACRON (U+01DE) 	c79e
+  # ǟ 	LATIN SMALL LETTER A WITH DIAERESIS AND MACRON (U+01DF) 	c79f
+  # Ǡ 	LATIN CAPITAL LETTER A WITH DOT ABOVE AND MACRON (U+01E0) 	c7a0
+  # ǡ 	LATIN SMALL LETTER A WITH DOT ABOVE AND MACRON (U+01E1) 	c7a1
+  # Ǣ 	LATIN CAPITAL LETTER AE WITH MACRON (U+01E2) 	c7a2
+  # ǣ 	LATIN SMALL LETTER AE WITH MACRON (U+01E3) 	c7a3
+  # Ǥ 	LATIN CAPITAL LETTER G WITH STROKE (U+01E4) 	c7a4
+  # ǥ 	LATIN SMALL LETTER G WITH STROKE (U+01E5) 	c7a5

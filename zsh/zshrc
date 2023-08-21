@@ -209,11 +209,48 @@ alias ls='exa'
 alias ll='exa -l'
 
 # Better highlighting etc than cat.
-alias cat='bat'
-
+#alias cat='bat' # leaving this here as a reminder - rather just type bat.
 # man kindof sucks.
 alias man='tldr'
 
-# Setup ps1 (kubernetes prompt) [unfortunately this is very long for AWS clusters]
+
+## Keep bash history neat:
+setopt HIST_IGNORE_ALL_DUPS
+
+setopt EXTENDED_HISTORY
+
+# function shorten_cluster() {
+#     local cluster=$1
+#     # To shorten the cluster name, you can use the following line:
+#     cluster=${cluster: -10}
+
+#     # To set an alias, you can use an associative array like the following:
+#     declare -A cluster_alias_map
+#     cluster_alias_map["very-long-cluster-name"]="alias1"
+#     cluster_alias_map["another-long-cluster-name"]="alias2"
+
+#     if [[ ${cluster_alias_map[$cluster]+_} ]]; then
+#         echo "${cluster_alias_map[$cluster]}"
+#     else
+#         echo "$cluster"
+#     fi
+# }
+
+# export KUBE_PS1_CLUSTER_FUNCTION=shorten_cluster
+
+# # Setup ps1 (kubernetes prompt) [unfortunately this is very long for AWS clusters]
 # source /home/jasoons/Documents/config/kube-ps1/kube-ps1.sh
 # PROMPT='$(kube_ps1)'$PROMPT # or RPROMPT='$(kube_ps1)'
+
+unalias gt # gt is used for graphite
+
+# DENO:
+  export DENO_INSTALL="/home/jasoons/.deno"
+  export PATH="$DENO_INSTALL/bin:$PATH"
+
+# https://atuin.sh/
+eval "$(atuin init zsh --disable-up-arrow)"
+
+alias fd="fdfind"
+
+export BROWSER='/usr/bin/firefox'

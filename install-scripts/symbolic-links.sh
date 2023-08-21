@@ -15,8 +15,9 @@ function _link() {
 
 info "Creating Symbolic links"
 _link ${dotfiles_dir}/.vimrc $HOME/.vimrc
-_link ${dotfiles_dir}/.gitconfig $HOME/.gitconfig
-_link ${dotfiles_dir}/.tmux.conf $HOME/.tmux.conf
+_link ${dotfiles_dir}/gitconfig $HOME/.gitconfig
+_link ${dotfiles_dir}/tmux.conf $HOME/.tmux.conf
+_link ${dotfiles_dir}/alacritty ${HOME}/.config/alacritty
 # _link ${dotfiles_dir}/.zshrc $HOME/.zshrc
 # _link ${dotfiles_dir}/.config/autostart/xmodmap.desktop $HOME/.config/autostart/xmodmap.desktop
 # _link ${dotfiles_dir}/.Xmodmap $HOME/.Xmodmap
@@ -28,4 +29,3 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "should setup zshi"
 ${dotfiles_dir}/zsh/setupZshLinks.sh
-
