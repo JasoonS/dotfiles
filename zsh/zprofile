@@ -64,3 +64,4 @@ fi
 
 # Created by `pipx` on 2022-11-01 12:10:42
 export PATH="$PATH:/home/jasoons/.local/bin"
+source "$HOME/.rye/env"
